@@ -1,4 +1,4 @@
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Pidgin extension, to use end to end encryption
 Name:		pidgin-encryption
@@ -51,5 +51,3 @@ rm -rf %{buildroot}%{_libdir}/pidgin/encrypt.{l,}a
 
 %clean
 rm -rf %{buildroot}
-
-
