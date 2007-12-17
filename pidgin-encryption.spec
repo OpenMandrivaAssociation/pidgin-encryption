@@ -6,7 +6,6 @@ Version:	3.0
 Release:	%release
 Group: 		Networking/Instant messaging
 License:	GPL
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Url:		http://gaim-encryption.sourceforge.net/
 Source0:	http://prdownload.sourceforge.net/gaim-encryption/%name-%version.tar.bz2
 BuildRequires:  libnss-devel
