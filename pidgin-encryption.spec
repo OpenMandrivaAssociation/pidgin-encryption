@@ -1,4 +1,4 @@
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary:	Pidgin extension, to use end to end encryption
 Name:		pidgin-encryption
