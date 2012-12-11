@@ -1,53 +1,47 @@
-%define release %mkrel 2
+Name:       pidgin-encryption
+Version:    3.1
+Release:    %mkrel 2
+Summary:    Pidgin extension, to use end to end encryption
+Group:      Networking/Instant messaging
+License:    GPLv2
+Url:        http://pidgin-encrypt.sourceforge.net/
 
-Summary:	Pidgin extension, to use end to end encryption
-Name:		pidgin-encryption
-Version:	3.1
-Release:	%release
-Group: 		Networking/Instant messaging
-License:	GPL
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Url:		http://gaim-encryption.sourceforge.net/
-Source0:	http://prdownload.sourceforge.net/gaim-encryption/%name-%version.tar.gz
-BuildRequires:  libnss-devel
+Source0:    http://sourceforge.net/projects/pidgin-encrypt/files/Releases/%version/pidgin-encryption-%version.tar.gz
+Patch1:     pidgin-encryption-new_glib-fix.patch
+
+BuildRequires:  nss-devel
 BuildRequires:  nspr-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	pidgin-devel
-Requires:	pidgin
-Obsoletes:	gaim-encryption gaim-encrypt
-Provides:	gaim-encryption gaim-encrypt
+BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pidgin-devel
+
+Requires:   pidgin
+
+# Not sure what to do with these ?
+#Obsoletes: gaim-encryption gaim-encrypt
+#Provides:  gaim-encryption gaim-encrypt
 
 %description
-This Pidgin plugin allows you to encrypt the message, 
-only if the person on the other end use the same plugin.
+This Pidgin plug-in allows you to encrypt the message,
+only if the person on the other end use the same plug-in.
 
 %prep
-%setup -q 
+%setup -q
+%patch1 -p1
 chmod 0644 README
 
 %build
 #(peroyvind) glib/gstdio.h doesn't exist in older releases
-%if %mdkversion < 1020
-mkdir glib
-touch glib/gstdio.h
-CPPFLAGS="-I`pwd`" \
-%endif
 export LD_LIBRARY_PATH=/usr/X11R6/%{_lib}
 %configure2_5x
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 rm -rf %{buildroot}%{_libdir}/pidgin/encrypt.{l,}a
 
 %find_lang %name
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc NOTES CHANGELOG TODO README WISHLIST
 %{_libdir}/pidgin/encrypt.so
-%_datadir/pixmaps/%name/
-
-%clean
-rm -rf %{buildroot}
+%{_datadir}/pixmaps/pidgin-encryption/*

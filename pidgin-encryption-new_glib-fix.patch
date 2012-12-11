@@ -1,0 +1,19 @@
+Les sous-répertoires pidgin-encryption-3.1.orig/.deps et pidgin-encryption-3.1/.deps sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/intl et pidgin-encryption-3.1/intl sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/.libs et pidgin-encryption-3.1/.libs sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/m4 et pidgin-encryption-3.1/m4 sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/nsis et pidgin-encryption-3.1/nsis sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/pixmaps et pidgin-encryption-3.1/pixmaps sont identiques
+Les sous-répertoires pidgin-encryption-3.1.orig/po et pidgin-encryption-3.1/po sont identiques
+diff -U3 pidgin-encryption-3.1.orig/rsa_nss.c pidgin-encryption-3.1/rsa_nss.c
+--- pidgin-encryption-3.1.orig/rsa_nss.c	2010-04-26 03:53:46.000000000 +0200
++++ pidgin-encryption-3.1/rsa_nss.c	2012-11-04 21:08:12.162499783 +0100
+@@ -24,7 +24,7 @@
+ #include <debug.h>
+ #include <gtkdialogs.h>
+ 
+-#include "glib/gmain.h"
++#include <glib.h>
+ 
+ #include <string.h>
+ #include <assert.h>
