@@ -1,6 +1,6 @@
 Name:       pidgin-encryption
 Version:    3.1
-Release:    %mkrel 2
+Release:    3
 Summary:    Pidgin extension, to use end to end encryption
 Group:      Networking/Instant messaging
 License:    GPLv2
