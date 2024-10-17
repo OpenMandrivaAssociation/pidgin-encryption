@@ -4,7 +4,7 @@ Release:    3
 Summary:    Pidgin extension, to use end to end encryption
 Group:      Networking/Instant messaging
 License:    GPLv2
-Url:        http://pidgin-encrypt.sourceforge.net/
+Url:        https://pidgin-encrypt.sourceforge.net/
 
 Source0:    http://sourceforge.net/projects/pidgin-encrypt/files/Releases/%version/pidgin-encryption-%version.tar.gz
 Patch1:     pidgin-encryption-new_glib-fix.patch
