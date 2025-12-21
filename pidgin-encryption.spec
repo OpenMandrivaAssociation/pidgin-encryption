@@ -9,6 +9,11 @@ Url:        https://pidgin-encrypt.sourceforge.net/
 Source0:    http://sourceforge.net/projects/pidgin-encrypt/files/Releases/%version/pidgin-encryption-%version.tar.gz
 Patch1:     pidgin-encryption-new_glib-fix.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  nss-devel
 BuildRequires:  nspr-devel
 BuildRequires:  pkgconfig(gtk+-2.0)
